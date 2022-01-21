@@ -3,7 +3,6 @@ from . import auth
 from ..models import User
 from .forms import RegistrationForm, LoginForm
 from .. import db
-#from ..email import mail_message
 from flask_login import login_user, login_required, logout_user,current_user
 
 
@@ -33,7 +32,6 @@ def register():
         return redirect(url_for('auth.login'))
     flash('Registration successful')
 
-    title = "New Account"
     return render_template('auth/register.html', registration_form=form)
 
 
