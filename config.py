@@ -1,13 +1,7 @@
 import os
 
 class Config:
-    '''
-    Describes the general configurations
-    '''
     SECRET_KEY = os.environ.get('SECRET_KEY')
-
-    # DATABASE_PASS = os.environ.get('DATABASE_PASS')
-    # UPLOADED_PHOTOS_DEST = 'app/static/images'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://ahmed:dawnfm@localhost/pitchme'
     
