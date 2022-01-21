@@ -4,7 +4,6 @@ class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://ahmed:dawnfm@localhost/pitchme'
-    
     # emails configuration
     MAIL_SERVER = 'smtp.googlemail.com'
     MAIL_PORT = 587
@@ -20,11 +19,6 @@ class Config:
 
 class ProdConfig(Config):
 
-    '''
-    Production configuration child class
-    Args:
-        Config: The parent configuration class with general configuration settings
-    '''
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
     pass
 
