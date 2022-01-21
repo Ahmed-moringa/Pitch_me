@@ -4,10 +4,10 @@ ul
 }
  .pitch-card  a
  {
-      color: green;
+      color: rgb(131, 255, 131);
  }
  .pitch-card  a:hover
  {
      padding-bottom: 20px;
-      border-bottom: 1px solid green;
+      border-bottom: 1px solid rgb(53, 253, 53);
  }
