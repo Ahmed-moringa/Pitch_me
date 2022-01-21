@@ -3,7 +3,7 @@ from flask_script import Manager, Shell,Server
 from app.models import User
 from flask_migrate import Migrate, MigrateCommand
 
-#app = create_app('test')
+app = create_app('test')
 #app = create_app('production')
 app = create_app('development')
 
@@ -28,7 +28,7 @@ def test():
 def make_shell_context():
     return dict( app=app, db=db, User=User)
 
-#app.config['SECRET_KEY'] ='dawnfm'
+app.config['SECRET_KEY'] ='dawnfm'
 
 if __name__ == '__main__':
     manager.run()

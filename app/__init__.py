@@ -24,9 +24,13 @@ def create_app(config_name):
 
     app = Flask(__name__)
 
+    app.config.from_object(config_options[config_name])
+    config_options[config_name].init_app(app)
+
     #Initializing Flask Extensions
     bootstrap.init_app(app)
     db.init_app(app)
+
     login_manager.init_app(app)
 
     # # configure UploadSet
@@ -35,11 +39,8 @@ def create_app(config_name):
     
     simple.init_app(app)
 
-    app.config.from_object(config_options[config_name])
-    # config_options[config_name].init_app(app)
-
     mail.init_app(app)
-
+    
     from .main import main as main_blueprint
     app.register_blueprint(main_blueprint)
 
@@ -47,7 +48,7 @@ def create_app(config_name):
     app.register_blueprint(auth_blueprint, url_prefix='/auth')
 
     # setting config
-    #from .models import configure_request
-    #configure_request(app)
+    # from .models import configure_request
+    # configure_request(app)
 
     return app
